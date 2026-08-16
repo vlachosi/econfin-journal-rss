@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Example Journal</title>
+    <link>https://link.springer.com/journal/10551</link>
+    <description>Search results reached through an identity-provider error state.</description>
+    <item>
+      <title>Apparently valid item</title>
+      <link>https://journal.example/article/one</link>
+      <pubDate>Sat, 15 Aug 2026 10:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

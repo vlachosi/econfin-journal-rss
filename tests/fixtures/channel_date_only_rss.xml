@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Example Journal</title>
+    <link>https://journal.example/</link>
+    <description>Items omit dates; the channel supplies lastBuildDate.</description>
+    <lastBuildDate>Sat, 15 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Article one</title>
+      <link>https://journal.example/article/one</link>
+    </item>
+  </channel>
+</rss>

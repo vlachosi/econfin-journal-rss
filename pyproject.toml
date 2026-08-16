@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "economics-finance-journal-rss"
+version = "0.1.0"
+description = "Validated RSS catalog tooling for economics, finance, and econometrics journals"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+  "feedparser>=6.0.11,<7",
+  "PyYAML>=6.0.1,<7",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+journal-rss-generate = "scripts.generate_outputs:main"
+journal-rss-validate = "scripts.validate_feeds:main"
+journal-rss-check-rankings = "scripts.check_rankings:main"
+
+[tool.setuptools]
+packages = ["scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

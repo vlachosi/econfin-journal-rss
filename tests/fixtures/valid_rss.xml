@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Example Journal</title>
+    <link>https://journal.example/</link>
+    <description>Recent articles</description>
+    <lastBuildDate>Sat, 15 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Article one</title>
+      <link>https://journal.example/article/one</link>
+      <guid>https://journal.example/article/one</guid>
+      <author>editor@journal.example (Editorial Office)</author>
+      <pubDate>Sat, 15 Aug 2026 10:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Article two</title>
+      <link>https://journal.example/article/two</link>
+      <guid>https://journal.example/article/two</guid>
+      <pubDate>Fri, 14 Aug 2026 10:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

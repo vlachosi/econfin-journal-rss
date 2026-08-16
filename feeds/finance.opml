@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Economics, Finance, and Econometrics Journal RSS</title>
+  </head>
+  <body>
+    <outline text="Finance Research Letters" title="Finance Research Letters" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/15446123" htmlUrl="https://www.sciencedirect.com/journal/finance-research-letters" category="finance" />
+    <outline text="Financial Management" title="Financial Management" type="rss" xmlUrl="https://onlinelibrary.wiley.com/action/showFeed?jc=1755053x&amp;type=etoc&amp;feed=rss" htmlUrl="https://onlinelibrary.wiley.com/journal/1755053x" category="finance" />
+    <outline text="Journal of Banking &amp; Finance" title="Journal of Banking &amp; Finance" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/03784266" htmlUrl="https://www.sciencedirect.com/journal/journal-of-banking-and-finance" category="finance" />
+    <outline text="Journal of Corporate Finance" title="Journal of Corporate Finance" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/09291199" htmlUrl="https://www.sciencedirect.com/journal/journal-of-corporate-finance" category="finance" />
+    <outline text="Journal of Empirical Finance" title="Journal of Empirical Finance" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/09275398" htmlUrl="https://www.sciencedirect.com/journal/journal-of-empirical-finance" category="finance" />
+    <outline text="Journal of Financial and Quantitative Analysis" title="Journal of Financial and Quantitative Analysis" type="rss" xmlUrl="https://www.cambridge.org/core/rss/product/id/FB35548FF614F4556E96D01FA2CB412E" htmlUrl="https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis" category="finance" />
+    <outline text="Journal of Financial Economics" title="Journal of Financial Economics" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/0304405X" htmlUrl="https://www.sciencedirect.com/journal/journal-of-financial-economics" category="finance" />
+    <outline text="Journal of Financial Intermediation" title="Journal of Financial Intermediation" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/10429573" htmlUrl="https://www.sciencedirect.com/journal/journal-of-financial-intermediation" category="finance" />
+    <outline text="Journal of Financial Markets" title="Journal of Financial Markets" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/13864181" htmlUrl="https://www.sciencedirect.com/journal/journal-of-financial-markets" category="finance" />
+    <outline text="Journal of Financial Stability" title="Journal of Financial Stability" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/15723089" htmlUrl="https://www.sciencedirect.com/journal/journal-of-financial-stability" category="finance" />
+    <outline text="Mathematical Finance" title="Mathematical Finance" type="rss" xmlUrl="https://onlinelibrary.wiley.com/action/showFeed?jc=14679965&amp;type=etoc&amp;feed=rss" htmlUrl="https://onlinelibrary.wiley.com/journal/14679965" category="finance" />
+    <outline text="Review of Finance" title="Review of Finance" type="rss" xmlUrl="https://academic.oup.com/rss/site_5510/3371.xml" htmlUrl="https://academic.oup.com/rof" category="finance" />
+    <outline text="Review of Financial Studies" title="Review of Financial Studies" type="rss" xmlUrl="https://academic.oup.com/rss/site_5511/3372.xml" htmlUrl="https://academic.oup.com/rfs" category="finance" />
+    <outline text="The Journal of Finance" title="The Journal of Finance" type="rss" xmlUrl="https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&amp;type=etoc&amp;feed=rss" htmlUrl="https://onlinelibrary.wiley.com/journal/15406261" category="finance" />
+    <outline text="The Review of Asset Pricing Studies" title="The Review of Asset Pricing Studies" type="rss" xmlUrl="https://academic.oup.com/rss/site_5506/3367.xml" htmlUrl="https://academic.oup.com/raps" category="finance" />
+  </body>
+</opml>

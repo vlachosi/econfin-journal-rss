@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Economics, Finance, and Econometrics Journal RSS</title>
+  </head>
+  <body>
+    <outline text="Econometrica" title="Econometrica" type="rss" xmlUrl="https://onlinelibrary.wiley.com/feed/14680262/most-recent" htmlUrl="https://onlinelibrary.wiley.com/journal/14680262" category="economics,econometrics" />
+    <outline text="Journal of Econometrics" title="Journal of Econometrics" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/03044076" htmlUrl="https://www.sciencedirect.com/journal/journal-of-econometrics" category="econometrics" />
+  </body>
+</opml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Example Journal</title>
+    <link>https://journal.example/</link>
+    <description>Official but non-conforming RSS author field.</description>
+    <item>
+      <title>Article one</title>
+      <link>https://journal.example/article/one</link>
+      <author>Jane Researcher</author>
+      <pubDate>Sat, 15 Aug 2026 10:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

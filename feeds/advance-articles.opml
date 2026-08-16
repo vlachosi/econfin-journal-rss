@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Economics, Finance, and Econometrics Journal RSS</title>
+  </head>
+  <body>
+    <outline text="Quarterly Journal of Economics — advance articles" title="Quarterly Journal of Economics — advance articles" type="rss" xmlUrl="https://academic.oup.com/rss/site_5504/advanceAccess_3365.xml" htmlUrl="https://academic.oup.com/qje" category="economics" />
+    <outline text="The Review of Economic Studies" title="The Review of Economic Studies" type="rss" xmlUrl="https://academic.oup.com/rss/site_5508/advanceAccess_3369.xml" htmlUrl="https://academic.oup.com/restud" category="economics" />
+  </body>
+</opml>

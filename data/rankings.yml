@@ -1,0 +1,422 @@
+# Third-party SCImago ranking data. This file is excluded from the repository's
+# MIT License and is not relicensed here; see each source's usage terms.
+schema_version: 1
+
+policy:
+  display: separate_document
+  main_catalog_columns: prohibited
+  main_catalog_ordering: latest_current_sjr_descending
+  update_mode: manual_only
+
+provider:
+  name: SCImago Journal & Country Rank
+  homepage_url: https://www.scimagojr.com/
+  methodology_url: https://www.scimagojr.com/SCImagoJournalRank.pdf
+  update_frequency: annual
+
+sources:
+  - id: scimago-2025-economics-econometrics
+    name: SCImago 2025 - Economics and Econometrics
+    ranking_year: 2025
+    status: current
+    category: Economics and Econometrics
+    category_code: "2002"
+    source_url: "https://www.scimagojr.com/journalrank.php?category=2002&year=2025"
+    artifact_url: "https://www.scimagojr.com/journalrank.php?category=2002&out=xls"
+    sha256: 7aa1d3a97b2ff5c6b2a8f5a9605beda629156e70367ce36a5c05360beda6a493
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    usage_terms: Non-commercial use with citation.
+    usage_url: https://www.scimagojr.com/
+    notes: Latest available 2025 category snapshot; rankings based on Scopus data as of March 2026. Manually retrieved 2026-08-16. SCImago permits non-commercial use with citation.
+
+  - id: scimago-2025-finance
+    name: SCImago 2025 - Finance
+    ranking_year: 2025
+    status: current
+    category: Finance
+    category_code: "2003"
+    source_url: "https://www.scimagojr.com/journalrank.php?category=2003&year=2025"
+    artifact_url: "https://www.scimagojr.com/journalrank.php?category=2003&out=xls"
+    sha256: 3b727a66eb881a731207d66f09efeeafc2ac505b67b28b8d730fca73d17dbe0a
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    usage_terms: Non-commercial use with citation.
+    usage_url: https://www.scimagojr.com/
+    notes: Latest available 2025 category snapshot; rankings based on Scopus data as of March 2026. Manually retrieved 2026-08-16. SCImago permits non-commercial use with citation.
+
+  - id: scimago-2025-eef-miscellaneous
+    name: SCImago 2025 - Economics, Econometrics and Finance (miscellaneous)
+    ranking_year: 2025
+    status: current
+    category: Economics, Econometrics and Finance (miscellaneous)
+    category_code: "2001"
+    source_url: "https://www.scimagojr.com/journalrank.php?category=2001&year=2025"
+    artifact_url: "https://www.scimagojr.com/journalrank.php?category=2001&out=xls"
+    sha256: 0ff1d66457651a24bf60dfddc4fab5ca934f90132416dc42b6755ef89991e0fe
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    usage_terms: Non-commercial use with citation.
+    usage_url: https://www.scimagojr.com/
+    notes: Latest available 2025 category snapshot; rankings based on Scopus data as of March 2026. Manually retrieved 2026-08-16. SCImago permits non-commercial use with citation.
+
+rankings:
+  - journal_id: american-economic-review
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "23.489"
+    quartile: Q1
+    scimago_id: "22697"
+    matched_issn: "0002-8282"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=22697&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-financial-quantitative-analysis
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "4.404"
+    quartile: Q1
+    scimago_id: "80370"
+    matched_issn: "0022-1090"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=80370&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: quarterly-journal-economics
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "33.069"
+    quartile: Q1
+    scimago_id: "29431"
+    matched_issn: "0033-5533"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=29431&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: review-finance
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "9.870"
+    quartile: Q1
+    scimago_id: "16160"
+    matched_issn: "1572-3097"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=16160&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: review-financial-studies
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "17.406"
+    quartile: Q1
+    scimago_id: "16161"
+    matched_issn: "0893-9454"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=16161&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-financial-economics
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "18.748"
+    quartile: Q1
+    scimago_id: "24379"
+    matched_issn: "0304-405X"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=24379&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-corporate-finance
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "2.706"
+    quartile: Q1
+    scimago_id: "17496"
+    matched_issn: "0929-1199"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=17496&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-banking-finance
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "1.954"
+    quartile: Q1
+    scimago_id: "17472"
+    matched_issn: "0378-4266"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=17472&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-financial-intermediation
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "2.275"
+    quartile: Q1
+    scimago_id: "28996"
+    matched_issn: "1042-9573"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=28996&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-financial-markets
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "1.544"
+    quartile: Q1
+    scimago_id: "17528"
+    matched_issn: "1386-4181"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=17528&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-empirical-finance
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "1.139"
+    quartile: Q1
+    scimago_id: "17499"
+    matched_issn: "0927-5398"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=17499&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-financial-stability
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "1.589"
+    quartile: Q1
+    scimago_id: "144987"
+    matched_issn: "1572-3089"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=144987&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: finance-research-letters
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "1.672"
+    quartile: Q1
+    scimago_id: "15519"
+    matched_issn: "1544-6123"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=15519&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-finance
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "22.270"
+    quartile: Q1
+    scimago_id: "17500"
+    matched_issn: "0022-1082"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=17500&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: financial-management
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "3.477"
+    quartile: Q1
+    scimago_id: "74502"
+    matched_issn: "0046-3892"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=74502&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: mathematical-finance
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "1.761"
+    quartile: Q1
+    scimago_id: "18173"
+    matched_issn: "0960-1627"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=18173&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: review-asset-pricing-studies
+    source_id: scimago-2025-finance
+    category: Finance
+    sjr: "2.921"
+    quartile: Q1
+    scimago_id: "21100926577"
+    matched_issn: "2045-9920"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=21100926577&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: american-economic-journal-applied-economics
+    source_id: scimago-2025-eef-miscellaneous
+    category: Economics, Econometrics and Finance (miscellaneous)
+    sjr: "9.427"
+    quartile: Q1
+    scimago_id: "19900191767"
+    matched_issn: "1945-7782"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=19900191767&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile; this journal is not assigned to Economics and Econometrics.
+
+  - journal_id: american-economic-journal-economic-policy
+    source_id: scimago-2025-eef-miscellaneous
+    category: Economics, Econometrics and Finance (miscellaneous)
+    sjr: "7.737"
+    quartile: Q1
+    scimago_id: "19900191884"
+    matched_issn: "1945-7731"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=19900191884&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile; this journal is not assigned to Economics and Econometrics.
+
+  - journal_id: american-economic-journal-macroeconomics
+    source_id: scimago-2025-eef-miscellaneous
+    category: Economics, Econometrics and Finance (miscellaneous)
+    sjr: "12.637"
+    quartile: Q1
+    scimago_id: "19900191885"
+    matched_issn: "1945-7707"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=19900191885&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile; this journal is not assigned to Economics and Econometrics.
+
+  - journal_id: american-economic-journal-microeconomics
+    source_id: scimago-2025-eef-miscellaneous
+    category: Economics, Econometrics and Finance (miscellaneous)
+    sjr: "4.257"
+    quartile: Q1
+    scimago_id: "19900191883"
+    matched_issn: "1945-7669"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=19900191883&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile; this journal is not assigned to Economics and Econometrics.
+
+  - journal_id: journal-economic-literature
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "16.872"
+    quartile: Q1
+    scimago_id: "27165"
+    matched_issn: "0022-0515"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=27165&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-economic-perspectives
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "8.181"
+    quartile: Q1
+    scimago_id: "28980"
+    matched_issn: "0895-3309"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=28980&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: review-economic-studies
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "23.622"
+    quartile: Q1
+    scimago_id: "24202"
+    matched_issn: "0034-6527"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=24202&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: econometrica
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "19.935"
+    quartile: Q1
+    scimago_id: "19482"
+    matched_issn: "0012-9682"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=19482&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-political-economy
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "16.250"
+    quartile: Q1
+    scimago_id: "24404"
+    matched_issn: "0022-3808"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=24404&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-econometrics
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "6.575"
+    quartile: Q1
+    scimago_id: "28973"
+    matched_issn: "0304-4076"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=28973&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-monetary-economics
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "6.262"
+    quartile: Q1
+    scimago_id: "17555"
+    matched_issn: "0304-3932"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=17555&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-public-economics
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "3.601"
+    quartile: Q1
+    scimago_id: "29009"
+    matched_issn: "0047-2727"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=29009&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.
+
+  - journal_id: journal-economic-theory
+    source_id: scimago-2025-economics-econometrics
+    category: Economics and Econometrics
+    sjr: "2.842"
+    quartile: Q1
+    scimago_id: "28981"
+    matched_issn: "0022-0531"
+    evidence_url: "https://www.scimagojr.com/journalsearch.php?q=28981&tip=sid&clean=0"
+    retrieved_at: "2026-08-16"
+    refresh_due: "2027-06-30"
+    notes: Annual 2025 SJR and category-specific quartile, manually matched by catalog print ISSN.

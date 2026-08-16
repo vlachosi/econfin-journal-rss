@@ -1,0 +1,1059 @@
+schema_version: 1
+
+catalog:
+  name: Economics, Finance, and Econometrics Journal RSS
+  description: Official journal feeds with explicit scope and compatibility evidence.
+  repository_url: https://github.com/vlachosi/economics-finance-journal-rss
+  default_max_age_days: 400
+
+journals:
+  - id: american-economic-review
+    name: American Economic Review
+    abbreviation: AER
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 0002-8282
+      online: 1944-7981
+    journal_url: https://www.aeaweb.org/journals/aer
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://pubs.aeaweb.org/journal/aer
+      notes: Journal-specific AEA table-of-contents feed; the separate AEA Research Highlights feed is cross-journal and is not used.
+    feeds:
+      - id: aer-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=aer
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://pubs.aeaweb.org/journal/aer
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: American Economic Review
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items.
+
+  - id: journal-financial-quantitative-analysis
+    name: Journal of Financial and Quantitative Analysis
+    abbreviation: JFQA
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Cambridge University Press
+    issn:
+      print: 0022-1090
+      online: 1756-6916
+    journal_url: https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis
+    discovery_status: limited
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis
+        - https://corehelp.cambridge.org/hc/en-gb/articles/17013205133330-Can-I-get-an-RSS-feed-from-Cambridge-Core
+      notes: Cambridge documents journal RSS support and embeds this exact endpoint on the journal page.
+    feeds:
+      - id: jfqa-current-issue
+        url: https://www.cambridge.org/core/rss/product/id/FB35548FF614F4556E96D01FA2CB412E
+        format: rdf
+        scope: current_issue
+        official_source_url: https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Financial and Quantitative Analysis
+          item_hosts: [dx.doi.org, doi.org, www.cambridge.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: Named RSS-reader user agents receive the feed; anonymous or generic automation may receive HTTP 403.
+          exception: Official Cambridge feed is retained because ordinary named RSS readers pass without cookies.
+
+  - id: quarterly-journal-economics
+    name: Quarterly Journal of Economics
+    abbreviation: QJE
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: Oxford University Press
+    issn:
+      print: 0033-5533
+      online: 1531-4650
+    journal_url: https://academic.oup.com/qje
+    discovery_status: limited
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://academic.oup.com/qje
+        - https://academic.oup.com/qje/advance-articles
+      notes: OUP links separate journal-specific feeds for the current issue and advance articles; both require an identifying reader or validator user agent.
+    feeds:
+      - id: qje-current-issue
+        url: https://academic.oup.com/rss/site_5504/3365.xml
+        format: rss
+        scope: current_issue
+        official_source_url: https://academic.oup.com/qje
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Quarterly Journal of Economics
+          item_hosts: [academic.oup.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: OUP blocks generic automation identities but tested RSS-reader identities receive valid RSS directly.
+      - id: qje-advance-articles
+        url: https://academic.oup.com/rss/site_5504/advanceAccess_3365.xml
+        format: rss
+        scope: advance_articles
+        official_source_url: https://academic.oup.com/qje/advance-articles
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Quarterly Journal of Economics Advance Access
+          item_hosts: [academic.oup.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: An explicit descriptive validator user agent and tested RSS-reader identities receive valid RSS; generic curl identities may receive HTTP 403.
+
+  - id: review-finance
+    name: Review of Finance
+    abbreviation: RF
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Oxford University Press
+    issn:
+      print: 1572-3097
+      online: 1875-824X
+    journal_url: https://academic.oup.com/rof
+    discovery_status: limited
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls: [https://academic.oup.com/rof]
+      notes: OUP labels the endpoint as the latest-issue RSS feed.
+    feeds:
+      - id: rf-current-issue
+        url: https://academic.oup.com/rss/site_5510/3371.xml
+        format: rss
+        scope: current_issue
+        official_source_url: https://academic.oup.com/rof
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Review of Finance
+          item_hosts: [academic.oup.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: OUP blocks generic automation identities but tested RSS-reader identities receive valid RSS directly.
+
+  - id: review-financial-studies
+    name: Review of Financial Studies
+    abbreviation: RFS
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Oxford University Press
+    issn:
+      print: 0893-9454
+      online: 1465-7368
+    journal_url: https://academic.oup.com/rfs
+    discovery_status: limited
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls: [https://academic.oup.com/rfs]
+      notes: OUP labels the endpoint as the latest-issue RSS feed.
+    feeds:
+      - id: rfs-current-issue
+        url: https://academic.oup.com/rss/site_5511/3372.xml
+        format: rss
+        scope: current_issue
+        official_source_url: https://academic.oup.com/rfs
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Review of Financial Studies
+          item_hosts: [academic.oup.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: OUP blocks generic automation identities but tested RSS-reader identities receive valid RSS directly.
+
+  - id: journal-financial-economics
+    name: Journal of Financial Economics
+    abbreviation: JFE
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 0304-405X
+      online: 1879-2774
+    journal_url: https://www.sciencedirect.com/journal/journal-of-financial-economics
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-financial-economics
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jfe-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/0304405X
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-financial-economics
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Financial Economics
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-corporate-finance
+    name: Journal of Corporate Finance
+    abbreviation: JCF
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 0929-1199
+      online: 1872-6313
+    journal_url: https://www.sciencedirect.com/journal/journal-of-corporate-finance
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-corporate-finance
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jcf-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/09291199
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-corporate-finance
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Corporate Finance
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-banking-finance
+    name: Journal of Banking & Finance
+    abbreviation: JBF
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 0378-4266
+      online: 1872-6372
+    journal_url: https://www.sciencedirect.com/journal/journal-of-banking-and-finance
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-banking-and-finance
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jbf-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/03784266
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-banking-and-finance
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Banking & Finance
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-financial-intermediation
+    name: Journal of Financial Intermediation
+    abbreviation: JFI
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 1042-9573
+      online: 1096-0473
+    journal_url: https://www.sciencedirect.com/journal/journal-of-financial-intermediation
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-financial-intermediation
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jfi-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/10429573
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-financial-intermediation
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Financial Intermediation
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-financial-markets
+    name: Journal of Financial Markets
+    abbreviation: JFM
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 1386-4181
+      online: 1878-576X
+    journal_url: https://www.sciencedirect.com/journal/journal-of-financial-markets
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-financial-markets
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jfm-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/13864181
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-financial-markets
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Financial Markets
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-empirical-finance
+    name: Journal of Empirical Finance
+    abbreviation: JEF
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 0927-5398
+      online: 1879-1727
+    journal_url: https://www.sciencedirect.com/journal/journal-of-empirical-finance
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-empirical-finance
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jef-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/09275398
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-empirical-finance
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Empirical Finance
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-financial-stability
+    name: Journal of Financial Stability
+    abbreviation: JFS
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 1572-3089
+      online: 1878-0962
+    journal_url: https://www.sciencedirect.com/journal/journal-of-financial-stability
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-financial-stability
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jfs-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/15723089
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-financial-stability
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Financial Stability
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: finance-research-letters
+    name: Finance Research Letters
+    abbreviation: FRL
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Elsevier
+    issn:
+      print: 1544-6123
+      online: 1544-6131
+    journal_url: https://www.sciencedirect.com/journal/finance-research-letters
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/finance-research-letters
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: frl-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/15446123
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/finance-research-letters
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Finance Research Letters
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-finance
+    name: The Journal of Finance
+    abbreviation: JF
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Wiley
+    issn:
+      print: 0022-1082
+      online: 1540-6261
+    journal_url: https://onlinelibrary.wiley.com/journal/15406261
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://onlinelibrary.wiley.com/journal/15406261
+      notes: Wiley exposes this journal-specific most-recent table-of-contents RSS feed.
+    feeds:
+      - id: jf-all-new-content
+        url: https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss
+        format: rss
+        scope: all_new_content
+        official_source_url: https://onlinelibrary.wiley.com/journal/15406261
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: The Journal of Finance
+          item_hosts: [onlinelibrary.wiley.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 2.0 with machine-readable item dates.
+
+  - id: financial-management
+    name: Financial Management
+    abbreviation: FM
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Wiley
+    issn:
+      print: 0046-3892
+      online: 1755-053X
+    journal_url: https://onlinelibrary.wiley.com/journal/1755053x
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://onlinelibrary.wiley.com/journal/1755053x
+      notes: Wiley exposes this journal-specific most-recent table-of-contents RSS feed.
+    feeds:
+      - id: fm-all-new-content
+        url: https://onlinelibrary.wiley.com/action/showFeed?jc=1755053x&type=etoc&feed=rss
+        format: rss
+        scope: all_new_content
+        official_source_url: https://onlinelibrary.wiley.com/journal/1755053x
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Financial Management
+          item_hosts: [onlinelibrary.wiley.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 2.0 with machine-readable item dates.
+
+  - id: mathematical-finance
+    name: Mathematical Finance
+    abbreviation: MF
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Wiley
+    issn:
+      print: 0960-1627
+      online: 1467-9965
+    journal_url: https://onlinelibrary.wiley.com/journal/14679965
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://onlinelibrary.wiley.com/journal/14679965
+      notes: Wiley exposes this journal-specific most-recent table-of-contents RSS feed.
+    feeds:
+      - id: mf-all-new-content
+        url: https://onlinelibrary.wiley.com/action/showFeed?jc=14679965&type=etoc&feed=rss
+        format: rss
+        scope: all_new_content
+        official_source_url: https://onlinelibrary.wiley.com/journal/14679965
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Mathematical Finance
+          item_hosts: [onlinelibrary.wiley.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 2.0 with machine-readable item dates.
+
+  - id: review-asset-pricing-studies
+    name: The Review of Asset Pricing Studies
+    abbreviation: RAPS
+    disciplines: [finance]
+    primary_discipline: finance
+    publisher: Oxford University Press
+    issn:
+      print: 2045-9920
+      online: 2045-9939
+    journal_url: https://academic.oup.com/raps
+    discovery_status: limited
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://academic.oup.com/raps
+      notes: The official OUP endpoint is journal-specific and identifies itself as the current-issue feed.
+    feeds:
+      - id: raps-current-issue
+        url: https://academic.oup.com/rss/site_5506/3367.xml
+        format: rss
+        scope: current_issue
+        official_source_url: https://academic.oup.com/raps
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Review of Asset Pricing Studies
+          item_hosts: [academic.oup.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: OUP blocks generic automation identities, while named RSS-reader and validator identities receive valid RSS directly; advance articles are outside this feed's scope.
+
+  - id: american-economic-journal-applied-economics
+    name: 'American Economic Journal: Applied Economics'
+    abbreviation: AEJ Applied
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 1945-7782
+      online: 1945-7790
+    journal_url: https://www.aeaweb.org/journals/app
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.aeaweb.org/journals/app
+      notes: Journal-specific AEA table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: aej-applied-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=app
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.aeaweb.org/journals/app
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: 'American Economic Journal: Applied Economics'
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: american-economic-journal-economic-policy
+    name: 'American Economic Journal: Economic Policy'
+    abbreviation: AEJ Policy
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 1945-7731
+      online: 1945-774X
+    journal_url: https://www.aeaweb.org/journals/pol
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.aeaweb.org/journals/pol
+      notes: Journal-specific AEA table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: aej-policy-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=pol
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.aeaweb.org/journals/pol
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: 'American Economic Journal: Economic Policy'
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: american-economic-journal-macroeconomics
+    name: 'American Economic Journal: Macroeconomics'
+    abbreviation: AEJ Macro
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 1945-7707
+      online: 1945-7715
+    journal_url: https://www.aeaweb.org/journals/mac
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.aeaweb.org/journals/mac
+      notes: Journal-specific AEA table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: aej-macro-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=mac
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.aeaweb.org/journals/mac
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: 'American Economic Journal: Macroeconomics'
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: american-economic-journal-microeconomics
+    name: 'American Economic Journal: Microeconomics'
+    abbreviation: AEJ Micro
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 1945-7669
+      online: 1945-7685
+    journal_url: https://www.aeaweb.org/journals/mic
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.aeaweb.org/journals/mic
+      notes: Journal-specific AEA table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: aej-micro-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=mic
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.aeaweb.org/journals/mic
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: 'American Economic Journal: Microeconomics'
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: journal-economic-literature
+    name: Journal of Economic Literature
+    abbreviation: JEL
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 0022-0515
+      online: 2328-8175
+    journal_url: https://www.aeaweb.org/journals/jel
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.aeaweb.org/journals/jel
+      notes: Journal-specific AEA table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: jel-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=jel
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.aeaweb.org/journals/jel
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Economic Literature
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: journal-economic-perspectives
+    name: Journal of Economic Perspectives
+    abbreviation: JEP
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: American Economic Association
+    issn:
+      print: 0895-3309
+      online: 1944-7965
+    journal_url: https://www.aeaweb.org/journals/jep
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.aeaweb.org/journals/jep
+      notes: Journal-specific AEA table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: jep-all-new-content
+        url: https://pubs.aeaweb.org/action/showFeed?type=etoc&feed=rss&jc=jep
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.aeaweb.org/journals/jep
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Economic Perspectives
+          item_hosts: [pubs.aeaweb.org]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: review-economic-studies
+    name: The Review of Economic Studies
+    abbreviation: REStud
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: Oxford University Press
+    issn:
+      print: 0034-6527
+      online: 1467-937X
+    journal_url: https://academic.oup.com/restud
+    discovery_status: limited
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://academic.oup.com/restud
+        - https://academic.oup.com/restud/advance-articles
+      notes: OUP links this journal-specific advance-articles feed; retrieval requires an identifying reader or validator user agent.
+    feeds:
+      - id: restud-advance-articles
+        url: https://academic.oup.com/rss/site_5508/advanceAccess_3369.xml
+        format: rss
+        scope: advance_articles
+        official_source_url: https://academic.oup.com/restud/advance-articles
+        status: limited
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Review of Economic Studies Advance Access
+          item_hosts: [academic.oup.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: true
+          w3c_validation: valid
+          notes: An explicit descriptive validator user agent and tested RSS-reader identities receive valid RSS; generic curl identities may receive HTTP 403.
+
+  - id: econometrica
+    name: Econometrica
+    abbreviation: Econometrica
+    disciplines: [economics, econometrics]
+    primary_discipline: econometrics
+    publisher: Wiley
+    issn:
+      print: 0012-9682
+      online: 1468-0262
+    journal_url: https://onlinelibrary.wiley.com/journal/14680262
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://onlinelibrary.wiley.com/journal/14680262
+        - https://onlinelibrary.wiley.com/researchers/read/find-research
+      notes: Wiley exposes this journal-specific most-recent feed covering the latest issue and Early View articles.
+    feeds:
+      - id: econometrica-all-new-content
+        url: https://onlinelibrary.wiley.com/feed/14680262/most-recent
+        format: rss
+        scope: all_new_content
+        official_source_url: https://onlinelibrary.wiley.com/journal/14680262
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Econometrica
+          item_hosts: [onlinelibrary.wiley.com]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 2.0 with journal-specific items and machine-readable dates.
+
+  - id: journal-political-economy
+    name: Journal of Political Economy
+    abbreviation: JPE
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: The University of Chicago Press
+    issn:
+      print: 0022-3808
+      online: 1537-534X
+    journal_url: https://www.journals.uchicago.edu/toc/jpe/current
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.journals.uchicago.edu/toc/jpe/current
+      notes: Chicago Journals exposes this journal-specific table-of-contents feed covering the latest issue and ahead-of-print articles.
+    feeds:
+      - id: jpe-all-new-content
+        url: https://www.journals.uchicago.edu/action/showFeed?type=etoc&feed=rss&jc=jpe
+        format: rdf
+        scope: all_new_content
+        official_source_url: https://www.journals.uchicago.edu/toc/jpe/current
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Political Economy
+          item_hosts: [www.journals.uchicago.edu]
+          min_items: 1
+          max_age_days: 400
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Direct, cookie-free RSS 1.0/RDF feed with journal-specific items and machine-readable dates.
+
+  - id: journal-econometrics
+    name: Journal of Econometrics
+    abbreviation: JoE
+    disciplines: [econometrics]
+    primary_discipline: econometrics
+    publisher: Elsevier
+    issn:
+      print: 0304-4076
+      online: 1872-6895
+    journal_url: https://www.sciencedirect.com/journal/journal-of-econometrics
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-econometrics
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: joe-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/03044076
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-econometrics
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Econometrics
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-monetary-economics
+    name: Journal of Monetary Economics
+    abbreviation: JME
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: Elsevier
+    issn:
+      print: 0304-3932
+      online: 1873-1295
+    journal_url: https://www.sciencedirect.com/journal/journal-of-monetary-economics
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-monetary-economics
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jme-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/03043932
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-monetary-economics
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Monetary Economics
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-public-economics
+    name: Journal of Public Economics
+    abbreviation: JPubE
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: Elsevier
+    issn:
+      print: 0047-2727
+      online: 1879-2316
+    journal_url: https://www.sciencedirect.com/journal/journal-of-public-economics
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-public-economics
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jpube-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/00472727
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-public-economics
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Public Economics
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.
+
+  - id: journal-economic-theory
+    name: Journal of Economic Theory
+    abbreviation: JET
+    disciplines: [economics]
+    primary_discipline: economics
+    publisher: Elsevier
+    issn:
+      print: 0022-0531
+      online: 1095-7235
+    journal_url: https://www.sciencedirect.com/journal/journal-of-economic-theory
+    discovery_status: working
+    discovery:
+      checked_at: '2026-08-16'
+      source_urls:
+        - https://www.sciencedirect.com/journal/journal-of-economic-theory
+      notes: The official ScienceDirect journal page and publisher-hosted publication feed were live-checked.
+    feeds:
+      - id: jet-all-new-content
+        url: https://rss.sciencedirect.com/publication/science/00220531
+        format: rss
+        scope: all_new_content
+        official_source_url: https://www.sciencedirect.com/journal/journal-of-economic-theory
+        status: working
+        last_checked: '2026-08-16'
+        expected:
+          title_contains: Journal of Economic Theory
+          item_hosts: [www.sciencedirect.com]
+          min_items: 1
+          max_age_days: 400
+          date_check: channel_if_needed
+        compatibility:
+          requires_identifying_user_agent: false
+          w3c_validation: valid
+          notes: Works normally in RSS readers. Individual items do not include machine-readable dates, so the catalog uses the feed update date to confirm that the feed is active.

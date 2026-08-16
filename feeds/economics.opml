@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Economics, Finance, and Econometrics Journal RSS</title>
+  </head>
+  <body>
+    <outline text="American Economic Journal: Applied Economics" title="American Economic Journal: Applied Economics" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=app" htmlUrl="https://www.aeaweb.org/journals/app" category="economics" />
+    <outline text="American Economic Journal: Economic Policy" title="American Economic Journal: Economic Policy" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=pol" htmlUrl="https://www.aeaweb.org/journals/pol" category="economics" />
+    <outline text="American Economic Journal: Macroeconomics" title="American Economic Journal: Macroeconomics" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=mac" htmlUrl="https://www.aeaweb.org/journals/mac" category="economics" />
+    <outline text="American Economic Journal: Microeconomics" title="American Economic Journal: Microeconomics" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=mic" htmlUrl="https://www.aeaweb.org/journals/mic" category="economics" />
+    <outline text="American Economic Review" title="American Economic Review" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=aer" htmlUrl="https://www.aeaweb.org/journals/aer" category="economics" />
+    <outline text="Journal of Economic Literature" title="Journal of Economic Literature" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=jel" htmlUrl="https://www.aeaweb.org/journals/jel" category="economics" />
+    <outline text="Journal of Economic Perspectives" title="Journal of Economic Perspectives" type="rss" xmlUrl="https://pubs.aeaweb.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=jep" htmlUrl="https://www.aeaweb.org/journals/jep" category="economics" />
+    <outline text="Journal of Economic Theory" title="Journal of Economic Theory" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/00220531" htmlUrl="https://www.sciencedirect.com/journal/journal-of-economic-theory" category="economics" />
+    <outline text="Journal of Monetary Economics" title="Journal of Monetary Economics" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/03043932" htmlUrl="https://www.sciencedirect.com/journal/journal-of-monetary-economics" category="economics" />
+    <outline text="Journal of Political Economy" title="Journal of Political Economy" type="rss" xmlUrl="https://www.journals.uchicago.edu/action/showFeed?type=etoc&amp;feed=rss&amp;jc=jpe" htmlUrl="https://www.journals.uchicago.edu/toc/jpe/current" category="economics" />
+    <outline text="Journal of Public Economics" title="Journal of Public Economics" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/00472727" htmlUrl="https://www.sciencedirect.com/journal/journal-of-public-economics" category="economics" />
+    <outline text="Quarterly Journal of Economics — advance articles" title="Quarterly Journal of Economics — advance articles" type="rss" xmlUrl="https://academic.oup.com/rss/site_5504/advanceAccess_3365.xml" htmlUrl="https://academic.oup.com/qje" category="economics" />
+    <outline text="Quarterly Journal of Economics — current issue" title="Quarterly Journal of Economics — current issue" type="rss" xmlUrl="https://academic.oup.com/rss/site_5504/3365.xml" htmlUrl="https://academic.oup.com/qje" category="economics" />
+    <outline text="The Review of Economic Studies" title="The Review of Economic Studies" type="rss" xmlUrl="https://academic.oup.com/rss/site_5508/advanceAccess_3369.xml" htmlUrl="https://academic.oup.com/restud" category="economics" />
+  </body>
+</opml>

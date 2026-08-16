@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Economics, Finance, and Econometrics Journal RSS</title>
+  </head>
+  <body>
+    <outline text="Journal of Financial and Quantitative Analysis" title="Journal of Financial and Quantitative Analysis" type="rss" xmlUrl="https://www.cambridge.org/core/rss/product/id/FB35548FF614F4556E96D01FA2CB412E" htmlUrl="https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis" category="finance" />
+    <outline text="Quarterly Journal of Economics — current issue" title="Quarterly Journal of Economics — current issue" type="rss" xmlUrl="https://academic.oup.com/rss/site_5504/3365.xml" htmlUrl="https://academic.oup.com/qje" category="economics" />
+    <outline text="Review of Finance" title="Review of Finance" type="rss" xmlUrl="https://academic.oup.com/rss/site_5510/3371.xml" htmlUrl="https://academic.oup.com/rof" category="finance" />
+    <outline text="Review of Financial Studies" title="Review of Financial Studies" type="rss" xmlUrl="https://academic.oup.com/rss/site_5511/3372.xml" htmlUrl="https://academic.oup.com/rfs" category="finance" />
+    <outline text="The Review of Asset Pricing Studies" title="The Review of Asset Pricing Studies" type="rss" xmlUrl="https://academic.oup.com/rss/site_5506/3367.xml" htmlUrl="https://academic.oup.com/raps" category="finance" />
+  </body>
+</opml>
