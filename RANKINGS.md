@@ -1,4 +1,4 @@
-# SCImago Journal Rankings
+# SCImago journal rankings
 
 **License notice:** The SCImago ranking data in this report is third-party material. It is not covered by this repository's MIT License and is not relicensed here; see the linked SCImago sources and usage terms.
 
