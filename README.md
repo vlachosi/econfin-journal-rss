@@ -78,6 +78,23 @@ Within each subject, journals are ordered from highest to lowest current SCImago
 | [Journal of Econometrics](https://www.sciencedirect.com/journal/journal-of-econometrics) (JoE) | econometrics | [all new content](https://rss.sciencedirect.com/publication/science/03044076) | working | 2026-08-16 |
 <!-- catalog:end -->
 
+## Automated checks
+
+| Workflow | Trigger | What it does |
+| --- | --- | --- |
+| [`ci.yml`](.github/workflows/ci.yml) | push to `main`, pull requests | Runs the test suite on Python 3.11-3.13 and fails if `README.md`, `RANKINGS.md`, or `feeds/*.opml` no longer match `data/`. Never contacts a publisher. |
+| [`scheduled-checks.yml`](.github/workflows/scheduled-checks.yml) | Mondays 06:17 UTC, or manually | Validates every catalogued feed against its publisher and reports failures on a tracking issue. Separately reports when the annual SCImago refresh falls due. |
+
+The weekly sweep repeats a failed run once before reporting, so a single transient
+publisher outage does not raise an alarm. A validation failure caused by invalid data
+in `data/` is reported as a repository defect rather than a publisher problem.
+
+**Operational note:** GitHub automatically disables scheduled workflows in a public
+repository after 60 days with no repository activity, and this catalog is designed to
+sit unchanged for long stretches. If no commit has landed for two months, check that
+Scheduled checks is still enabled under the repository's Actions tab; a manual
+**Run workflow** re-arms it.
+
 ## Journal rankings
 
 SCImago SJR is the catalog's ranking measure. The values and category-specific quartiles are kept in the separate [rankings report](RANKINGS.md). They are [checked and updated manually](docs/rankings.md); the repository does not scrape SCImago.
@@ -93,7 +110,7 @@ SCImago SJR is the catalog's ranking measure. The values and category-specific q
 ## Local use
 
 ```bash
-python -m pip install -e .[dev]
+python -m pip install -e ".[dev]"
 python scripts/generate_outputs.py --check
 python scripts/validate_feeds.py --strict
 python scripts/check_rankings.py

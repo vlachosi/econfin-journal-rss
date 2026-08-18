@@ -1,0 +1,185 @@
+name: Scheduled checks
+
+# Weekly maintenance for a catalog whose correctness decays on its own:
+# publishers move or retire feeds, and SCImago rankings expire annually.
+on:
+  schedule:
+    # Mondays at 06:17 UTC. Off-the-hour to avoid GitHub's peak-scheduling delays.
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Never let a slow feed sweep overlap the next week's run.
+  group: scheduled-checks
+  cancel-in-progress: false
+
+jobs:
+  feeds:
+    name: Validate live feeds
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+
+      # A single transient publisher outage should not raise an alarm, so a failed
+      # sweep is repeated once after a pause. Only a twice-failing feed is reported.
+      - name: Check every catalogued feed
+        id: validate
+        run: |
+          set +e
+          # --timeout 20 bounds the serial sweep: 31 feeds x 20s = ~10 min, so two
+          # sweeps plus the pause stay inside the 40-minute job cap. A cancelled job
+          # would never write the status output below, and every report step is
+          # gated on it, so the sweep must not be allowed to reach that cap.
+          python scripts/validate_feeds.py --strict --timeout 20 2>&1 | tee report.txt
+          status=${PIPESTATUS[0]}
+          # Exit 2 is a local defect (invalid data/ or bad arguments), not a
+          # publisher outage: never retry it and never blame a publisher for it.
+          if [ "$status" -ge 2 ]; then
+            echo "status=$status" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Exit 1 is a genuine feed failure. Repeat once to rule out a transient outage.
+          if [ "$status" -eq 1 ]; then
+            echo "::warning::First feed sweep reported failures; retrying once in 120s to rule out a transient publisher outage."
+            sleep 120
+            python scripts/validate_feeds.py --strict --timeout 20 2>&1 | tee report.txt
+            status=${PIPESTATUS[0]}
+          fi
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: feed-validation-report
+          path: report.txt
+          retention-days: 90
+
+      - name: Report failures
+        if: steps.validate.outputs.status == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          # The label must exist before it can be filtered on or applied.
+          gh label create feed-check --force \
+            --color d73a4a --description "Automated feed validation failure"
+          # Reuse one tracking issue so a persistently dead feed does not open a new
+          # issue every week.
+          existing=$(gh issue list --label feed-check --state open \
+            --json number --jq '.[0].number // empty')
+          {
+            echo "The weekly feed sweep failed twice in a row, so this is unlikely to be a transient publisher outage."
+            echo
+            echo "Run: $RUN_URL"
+            echo
+            echo '```'
+            grep -E '^(checking|  FAIL|Validated)' report.txt | tail -n 100 || tail -n 100 report.txt
+            echo '```'
+            echo
+            echo "Confirm the feed against the publisher's official page, then update \`data/journals.yml\` and regenerate."
+          } > body.md
+
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file body.md
+          else
+            gh issue create \
+              --title "Feed validation failing ($(date -u +%Y-%m-%d))" \
+              --label feed-check \
+              --body-file body.md
+          fi
+
+      - name: Fail the run when feeds are broken
+        if: steps.validate.outputs.status == '1'
+        run: |
+          echo "::error::Feed validation failed; see the tracking issue and the uploaded report."
+          exit 1
+
+      # Distinct from a feed failure: the catalog itself did not load.
+      - name: Fail the run when the catalog is invalid
+        if: steps.validate.outputs.status != '0' && steps.validate.outputs.status != '1'
+        run: |
+          echo "::error::validate_feeds.py exited ${{ steps.validate.outputs.status }}: data/journals.yml is invalid or an argument was rejected. This is a repository defect, not a publisher outage."
+          exit 1
+
+  rankings:
+    name: Rankings refresh due
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+
+      # Exit 1 means "an annual refresh is due" (a maintenance reminder, currently
+      # 2027-06-30). Exit 2 means the ranking data itself is invalid (a real defect).
+      - name: Check refresh deadlines
+        id: rankings
+        run: |
+          set +e
+          python scripts/check_rankings.py 2>&1 | tee rankings.txt
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          [ "$status" -le 1 ] && exit 0
+          echo "::error::Ranking data failed validation."
+          exit 1
+
+      - name: Open a refresh reminder
+        if: steps.rankings.outputs.status == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          DOCS_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/docs/rankings.md
+        run: |
+          set -euo pipefail
+          gh label create rankings-refresh --force \
+            --color 0e8a16 --description "Annual SCImago refresh is due"
+          existing=$(gh issue list --label rankings-refresh --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            echo "Reminder issue #$existing is already open; nothing to do."
+            exit 0
+          fi
+          {
+            echo "An annual SCImago refresh is now due."
+            echo
+            echo "Run: $RUN_URL"
+            echo
+            echo '```'
+            cat rankings.txt
+            echo '```'
+            echo
+            echo "Updates are manual by policy: check the cited SCImago pages, update \`data/rankings.yml\`, then regenerate. See [docs/rankings.md]($DOCS_URL)."
+          } > body.md
+          gh issue create \
+            --title "SCImago rankings refresh due" \
+            --label rankings-refresh \
+            --body-file body.md
